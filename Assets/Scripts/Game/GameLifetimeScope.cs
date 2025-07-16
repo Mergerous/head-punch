@@ -13,12 +13,18 @@ namespace Game
 {
     public sealed class GameLifetimeScope : LifetimeScope
     {
+        [Header(nameof(Enemy))]
         [SerializeField] private EnemyContainer enemyContainer;
+        [Header(nameof(Environment))]
         [SerializeField] private EnvironmentContainer environmentContainer;
+        [Header(nameof(Audio))]
         [SerializeField] private AudioContainer audioContainer;
         [SerializeField] private AudioConfigSo audioConfig;
+        [Header(nameof(Vfx))]
         [SerializeField] private VfxContainer vfxContainer;
+        [Header(nameof(Punches))]
         [SerializeField] private PunchConfigSo punchConfig;
+        [Header(nameof(Cameras))]
         [SerializeField] private CameraContainer cameraContainer;
         
         protected override void Configure(IContainerBuilder builder)
