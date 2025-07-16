@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8151956040041749920
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0353a89b1f911e48b9e16bdc9f2e058, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 9
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: HeadMaterial Variant 5
+  m_Shader: {fileID: -6465566751694194690, guid: 5572fae6a9dd1409b932f6a1b3dcecf1, type: 3}
+  m_Parent: {fileID: 2100000, guid: c0e17ddd64eb24165b4af84bc634fef3, type: 2}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BloodNoise:
+        m_Texture: {fileID: 2800000, guid: fbde9684b73b240a3ab0e4384f04000e, type: 3}
+        m_Scale: {x: 1.06, y: 1}
+        m_Offset: {x: -0.13, y: -0.04}
+    - _InjuryNoise:
+        m_Texture: {fileID: 2800000, guid: 2cf28607bca60415d9f6125ba1c0f02e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.51, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpHeight: -0.18
+    m_Colors:
+    - _BloodColor: {r: 0.5849056, g: 0.0034006138, b: 0, a: 1}
+    - _BloodEdges: {r: 0, g: 0.65, b: 0, a: 0}
+    - _BumpOffset: {r: -0.91, g: -1, b: 0, a: 0}
+    - _BumpRadius: {r: 0.54, g: 1, b: 0, a: 0}
+    - _BumpTilling: {r: 1, g: 1, b: 0, a: 0}
+    - _InjuryColor: {r: 0.3207547, g: 0, b: 0.28340945, a: 1}
+    - _InjuryEdges: {r: 0.03, g: 0.43, b: 0, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
