@@ -1,11 +1,14 @@
 using UnityEngine;
 
-namespace Playe
+namespace Player
 {
     public sealed class PlayerPunchController : MonoBehaviour
     {
+        private const float DISTANCE_MIN_VALUE = 0.1f;
+        
         [Header("Options")]
         [SerializeField] private float sensitivity = 100f;
+        [SerializeField] private float backwardSpeed = 5f;
         [Header("Components")]
         [SerializeField] private Transform leftGlove;
         [SerializeField] private Transform leftDestination;
@@ -36,23 +39,23 @@ namespace Playe
             if (isSwiped && Input.GetMouseButton(0))
             {
                 (Vector3 rhs, Transform source, Vector3 initialPosition, Transform destination) = isLeft
-                    ? (Vector3.up + Vector3.right, leftSource:leftGlove, leftInitialPosition, leftDestination)
-                    : (Vector3.up + Vector3.left, rightSource:rightGlove, rightInitialPosition, rightDestination);
+                    ? (Vector3.up + Vector3.right, leftGlove, leftInitialPosition, leftDestination)
+                    : (Vector3.up + Vector3.left, rightGlove, rightInitialPosition, rightDestination);
                     
                 Vector3 direction = Input.mousePosition - sourcePosition;
                 float dot = Vector3.Dot(direction.normalized, rhs);
                 
                 source.position = Vector3.Lerp(initialPosition, destination.position, Mathf.Sign(dot) * direction.magnitude / sensitivity);
                 
-                if (Vector3.Distance(source.position, destination.position) < 0.1f)
+                if (Vector3.Distance(source.position, destination.position) < DISTANCE_MIN_VALUE)
                 {
                     isSwiped = false;
                 }
             }
             else
             {
-                leftGlove.position = Vector3.Lerp(leftGlove.position, leftInitialPosition, Time.deltaTime * 5f);
-                rightGlove.position = Vector3.Lerp(rightGlove.position, rightInitialPosition, Time.deltaTime * 5f);
+                leftGlove.position = Vector3.Lerp(leftGlove.position, leftInitialPosition, Time.deltaTime * backwardSpeed);
+                rightGlove.position = Vector3.Lerp(rightGlove.position, rightInitialPosition, Time.deltaTime * backwardSpeed);
             }
         }
     }

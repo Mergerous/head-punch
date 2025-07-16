@@ -19,8 +19,7 @@ namespace Enemy
         private readonly IAudioService audioService;
         private readonly IEnvironmentService environmentService;
         private readonly ICameraService cameraService;
-
-        private Tween tween;
+        
         private int count;
         
         public PunchEnemyPayload Payload { private get; set; }
@@ -38,12 +37,6 @@ namespace Enemy
 
         public void OnEnter()
         {
-            tween?.Kill();
-            tween = Blackboard.Transform
-                .DOPunchScale(Vector3.one * 2f, 1, 4, 0.4f)
-                .OnKill(() => Blackboard.Transform.localScale = Vector3.one)
-                .SetLink(Blackboard.Transform.gameObject);
-            
             PunchConfig itemConfig = punchService.GetPunchConfig(count++);
             Blackboard.renderer.material = itemConfig.materialVariants[Random.Range(0, itemConfig.materialVariants.Length)];
             
